@@ -1,0 +1,46 @@
+#include<stdio.h>
+int candkey(int a[],int n)
+{
+int m=0,count=1,i;
+for(i=1;i<n;i++)
+{
+if(a[i]==a[m])
+{
+count++;
+}
+else
+{
+count--;
+}
+if(count==0)
+{
+m=i;
+count=1;
+}
+}
+return a[m];
+}
+int main()
+{
+int i,j,n,k;
+scanf("%d",&n);
+int a[n];
+for(i=0;i<n;i++)
+{
+scanf("%d",&a[i]);
+}
+
+k=candkey(a,n);
+int c=0;
+for(i=0;i<n;i++)
+{
+if(a[i]==k)
+{
+c++;
+}
+}
+if(c>n/2)
+printf("the majority element is %d",k);
+else
+printf("NO MAJORITY ELEMENT");
+}
