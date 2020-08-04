@@ -1,0 +1,30 @@
+//Algorithm to rotate array of size 'n' by 'd' elements right
+#include<stdio.h>
+void reverse(int a[],int start,int end)
+{
+int temp;
+while(start<=end)
+{
+temp=a[start];
+a[start]=a[end];
+a[end]=temp;
+}
+}
+int main()
+{
+int n,i,j,k,d;
+scanf("%d %d",&n,&k);
+int a[n];
+for(i=0;i<n;i++)
+{
+scanf("%d",&a[i]);
+}
+reverse(a,0,n-1);
+reverse(a,0,d-1);
+reverse(a,d,n-1);
+for(i=0;i<n;i++)
+{
+printf("%d ",a[i]);
+}
+}
+Time complexity:O(n)
