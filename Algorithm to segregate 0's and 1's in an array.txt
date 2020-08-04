@@ -1,0 +1,32 @@
+//Algorithm to segregate 0's and 1's in an array
+#include<stdio.h>
+int main()
+{
+int n,i,j;
+scanf("%d",&n);
+int a[n],count=0;
+for(i=0;i<n;i++)
+{
+scanf("%d",&a[i]);
+}
+for(i=0;i<n;i++)
+{
+if(a[i]==0)
+{
+count++;
+}
+}
+for(i=0;i<count;i++)
+{
+a[i]=0;
+}
+for(i=count;i<n;i++)
+{
+a[i]=1;
+}
+for(i=0;i<n;i++)
+{
+printf("%d ",a[i]);
+}
+}
+Time complexity:o(n)
